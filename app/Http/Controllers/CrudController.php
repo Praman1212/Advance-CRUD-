@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CRUD;
 
 class CrudController extends Controller
 {
@@ -34,7 +35,12 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new CRUD;
+        $category->category_id = $request->category_id;
+        $category->category_name = $request->category_name;
+        $category->order = $request->order;
+        $category->save();
+
     }
 
     /**
