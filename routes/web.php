@@ -18,3 +18,6 @@ Route::get('/',[CrudController::class,'index'])->name('index');
 
 // Create page route
 Route::get('/create',[CrudController::class,'create'])->name('create');
+
+// Store data using form 
+Route::post('/save',[CrudController::class,'store'])->name('store');
