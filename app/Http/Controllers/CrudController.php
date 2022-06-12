@@ -87,6 +87,11 @@ class CrudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $crud->delete();
+        // return redirect('/');
+        $category = CRUD::find($id);
+        $category->delete();
+
+        return redirect('/');
     }
 }

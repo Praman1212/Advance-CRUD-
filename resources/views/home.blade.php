@@ -24,7 +24,7 @@
                         <div class="row justify-content-center">
                             <div class="col-5">
                                 <a href="{{ url('/create') }}" class="btn btn-success" name = "create">Create</a>
-                               <a href="{{ url('/show/{id}') }}" class="btn btn-warning" name="view">View</a>
+                               <a href="{{ url('/show/{id}') }}" class="btn btn-warning" name="show">Show</a>
                             </div>
                         </div>
                     </div>

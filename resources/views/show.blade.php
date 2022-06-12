@@ -26,13 +26,16 @@
             <tbody>
                 @foreach($category as $data)
                 <tr>
-                    <th scope="row">{{$data->category_id}}</th>
+                    <th>{{$data->category_id}}</th>
                     <td>{{$data->category_name}}</td>
                     <td>{{$data->order}}</td>
                     <td>{{$data->created_at}}</td>
+                    <td><a href="" class="btn btn-warning">Edit</a></td>
                     <td>
-                        <a href="{{url('')}}" class="btn btn-warning">Edit</a>
-                        <a href="{{url('')}}" class="btn btn-danger">Delete</a>
+                        <form action="{{ URL::to('destroy/'.$data->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>                        
                     </td>
                 </tr>
                 @endforeach

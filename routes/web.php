@@ -21,5 +21,7 @@ Route::get('/create',[CrudController::class,'create'])->name('create');
 
 Route::get('/show/{id}',[CrudController::class,'show'])->name('show');
 
+Route::post('/destroy/{id}',[CrudController::class,'destroy']);
+
 // Store data using form 
 Route::post('/store',[CrudController::class,'store'])->name('store');
