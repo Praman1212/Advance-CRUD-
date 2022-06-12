@@ -52,6 +52,7 @@
                                     <div class="row mb-3">
                                         <div class="col-sm-10">
                                             <button type="submit" name="submit" class="btn btn-primary">Submit Form</button>
+                                            <a href="{{ url('/') }}" class="btn btn-dark">Back</a>
                                         </div>
                                     </div>
 

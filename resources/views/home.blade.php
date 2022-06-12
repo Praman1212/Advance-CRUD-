@@ -23,8 +23,8 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-5">
-                               <input type="submit" name="edit" class="btn btn-warning" value="Create">
-                               <input type="submit" name="edit" class="btn btn-secondary" value="view">
+                                <a href="{{ url('/create') }}" class="btn btn-success" name = "create">Create</a>
+                               <a href="{{ url('/show/{id}') }}" class="btn btn-warning" name="view">View</a>
                             </div>
                         </div>
                     </div>

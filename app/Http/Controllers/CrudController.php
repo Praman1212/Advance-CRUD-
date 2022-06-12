@@ -40,6 +40,7 @@ class CrudController extends Controller
         $category->category_name = $request->category_name;
         $category->order = $request->order;
         $category->save();
+        return redirect('/');
 
     }
 
@@ -49,9 +50,10 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $category = CRUD::all();
+        return view('show',compact('category'));
     }
 
     /**
@@ -62,7 +64,7 @@ class CrudController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
