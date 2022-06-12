@@ -30,13 +30,14 @@
                     <td>{{$data->category_name}}</td>
                     <td>{{$data->order}}</td>
                     <td>{{$data->created_at}}</td>
-                    <td><a href="" class="btn btn-warning">Edit</a></td>
+                    <td><a href="" class="btn btn-warning" style="color: white;">Edit</a></td>
                     <td>
                         <form action="{{ URL::to('destroy/'.$data->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>                        
                     </td>
+                    <td><a href="" class="btn btn-info" style="color: white;">Update</a></td>
                 </tr>
                 @endforeach
                 
