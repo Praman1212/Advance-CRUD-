@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::get('/edit/{id}',[CrudController::class,'edit'])->name('edit');
 
 // Store data using form 
 Route::post('/store',[CrudController::class,'store'])->name('store');
+// Auth
+Route::get('/register',[AuthController::class,'register'])->name('register');

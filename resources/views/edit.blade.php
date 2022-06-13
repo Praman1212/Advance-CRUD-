@@ -32,24 +32,24 @@
                                 
                                 <form action="{{ route('store') }}" method="POST">
                                     @csrf
-                                    @foreach($category as $cat)
+                                    @method('PUT')
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Category ID</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="category_id" class="form-control" value="{{ $cat->category_id }}">
+                                            <input type="text" name="category_id" class="form-control" value="{{ $crud->category_id }}">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Category Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="category_name" class="form-control" value="{{ $cat->category_name }}">
+                                            <input type="text" name="category_name" class="form-control" value="{{ $crud->category_name }}">
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Order</label>
                                         <select class="form-select" name="order" style="width: 15vh;">
-                                            <option value="">{{ $cat->order }}</option>
+                                            <option value="">{{ $crud->order }}</option>
                                             <option value="Men">Men</option>
                                             <option value="Women">Women</option>
                                             <option value="Kids">Kids</option>
@@ -61,7 +61,7 @@
                                             <a href="{{ url('/') }}" class="btn btn-dark">Back</a>
                                         </div>
                                     </div>
-                                    @endforeach
+                                    
                                 </form><!-- End General Form Elements -->
                             
 
