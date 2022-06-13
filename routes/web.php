@@ -23,5 +23,7 @@ Route::get('/show/{id}',[CrudController::class,'show'])->name('show');
 
 Route::post('/destroy/{id}',[CrudController::class,'destroy']);
 
+Route::get('/edit/{id}',[CrudController::class,'edit'])->name('edit');
+
 // Store data using form 
 Route::post('/store',[CrudController::class,'store'])->name('store');

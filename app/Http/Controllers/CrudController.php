@@ -64,7 +64,8 @@ class CrudController extends Controller
      */
     public function edit($id)
     {
-        
+        $category = CRUD::all();
+        return view('edit',compact('category'));    
     }
 
     /**
