@@ -45,9 +45,12 @@
 
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Order</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="order" class="form-control">
-                                        </div>
+                                        <select class="form-select" name="order" style="width: 15vh;">
+                                            <option selected>Order</option>
+                                            <option value="Men">Men</option>
+                                            <option value="Women">Women</option>
+                                            <option value="Kids">Kids</option>
+                                        </select>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-10">
