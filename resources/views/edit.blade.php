@@ -27,10 +27,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Category Form</h5>
 
-                                
-                               
-                                
-                                <form action="{{ route('store') }}" method="POST">
+                                <form action="{{ URL::to('update/'.$crud->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="row mb-3">
@@ -58,12 +55,12 @@
                                     <div class="row mb-3">
                                         <div class="col-sm-10">
                                             <button type="submit" name="submit" class="btn btn-primary">Update</button>
-                                            <a href="{{ url('/') }}" class="btn btn-dark">Back</a>
+                                            <a href="{{ URL::to( 'show/{id}' ) }}" class="btn btn-dark">Back</a>
                                         </div>
                                     </div>
-                                    
+
                                 </form><!-- End General Form Elements -->
-                            
+
 
                             </div>
                         </div>

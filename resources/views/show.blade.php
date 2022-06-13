@@ -43,7 +43,7 @@
                 
             </tbody>
         </table>
-        <a href="{{url('/')}}" class="btn btn-dark">Back</a>
+        <a href="{{url('/home')}}" class="btn btn-dark">Back</a>
     </div>
 </body>
 

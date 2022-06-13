@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CRUD;
+use Illuminate\Support\Facades\Auth;
 
 class CrudController extends Controller
 {
@@ -15,6 +16,11 @@ class CrudController extends Controller
     public function index()
     {
         return view('home');
+        // if(Auth::check()){
+        //     return view('home');
+        // }
+  
+        // return redirect("login")->withSuccess('You are not allowed to access');
     }
 
     /**
@@ -40,7 +46,7 @@ class CrudController extends Controller
         $category->category_name = $request->category_name;
         $category->order = $request->order;
         $category->save();
-        return redirect('/');
+        return redirect('/home');
 
     }
 
@@ -62,9 +68,9 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CRUD $crud)
-    {
-        
+    public function edit($id)
+    {   
+        $crud = CRUD::find($id);
         return view('edit',compact('crud'));    
     }
 
@@ -77,7 +83,18 @@ class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'category_id' => 'required',
+            'category_name' => 'required',
+            'order' => 'required',
+            ]);
+        $crud = CRUD::find($id);
+        $crud->category_id = $request->category_id;
+        $crud->category_name = $request->category_name;
+        $crud->order = $request->order;
+        $crud->save();
+        return redirect()->route('home-page');
+
     }
 
     /**
@@ -93,6 +110,6 @@ class CrudController extends Controller
         $category = CRUD::find($id);
         $category->delete();
 
-        return redirect('/');
+        return redirect('/home');
     }
 }

@@ -8,29 +8,42 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function register(){
+    public function register()
+    {
         return view('auth.register');
     }
-    public function registration(Request $request){
-        
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
-        return redirect('/login');
+    public function registration(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ]);
+
+        $data = $request->all();
+        $check = $this->create($data);
+
+        return redirect("login")->withSuccess('You have signed-in');
 
         // return view('auth.register');
     }
-    public function login(){
+    public function login()
+    {
         return view('auth.login');
     }
-    public function postLogin(Request $request){
-        $detail = $request->only('email','password');
-        if(Auth::attempt($detail)){
-            return redirect('/')->with('Login Successful');
-        }
-        return redirect('/register')->with('Invalid Information');
+    public function postLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect("home-page");
+        }
+
+        return redirect('home');
     }
 }
