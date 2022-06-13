@@ -18,18 +18,19 @@
                 <h1>Register Form</h1>
             </div>
             <div class="card-body">
-                <form>
+                <form action="{{ URL::to('/registration') }}" method="post">
+                    @csrf
                     <div class="mb-3">
                         <label  class="form-label">Name</label>
-                        <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="name" name="name" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" name="password" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

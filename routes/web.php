@@ -30,3 +30,5 @@ Route::get('/edit/{id}',[CrudController::class,'edit'])->name('edit');
 Route::post('/store',[CrudController::class,'store'])->name('store');
 // Auth
 Route::get('/register',[AuthController::class,'register'])->name('register');
+Route::post('/registration',[AuthController::class,'registration'])->name('registration');
+
