@@ -18,18 +18,27 @@
                 <h1>Register Form</h1>
             </div>
             <div class="card-body">
+                <div class="card-body">
+                    @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                    You are Logged In
+                </div>
                 <form action="{{ URL::to('/registration') }}" method="post">
                     @csrf
                     <div class="mb-3">
-                        <label  class="form-label">Name</label>
+                        <label class="form-label">Name</label>
                         <input type="name" name="name" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">Email address</label>
+                        <label class="form-label">Email address</label>
                         <input type="email" name="email" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">Password</label>
+                        <label class="form-label">Password</label>
                         <input type="password" name="password" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

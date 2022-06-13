@@ -34,3 +34,5 @@ Route::post('/registration',[AuthController::class,'registration'])->name('regis
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
 
+Route::post('/postLogin',[AuthController::class,'postLogin'])->name('postLogin');
+

@@ -18,7 +18,7 @@
                 <h1>Login Form</h1>
             </div>
             <div class="card-body">
-                <form action="" method="">
+                <form action="{{ URL::to('/postLogin') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label  class="form-label">Email address</label>
